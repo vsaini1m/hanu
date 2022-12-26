@@ -1,0 +1,39 @@
+*{
+    font-family: SQMarket-Medium,SQMarket,"Helvetica Neue","Helvetica","Arial",sans-serif;
+    font-weight: 500;
+}
+
+nav .btn:focus {
+        outline: none;
+        box-shadow: none;
+}
+
+.navbar-brand {
+    background: url(http://disputebills.com/site/uploads/2015/10/dispute.png) center / contain no-repeat;
+    transform: translateX(-50%);
+    left: 50%;
+    position: absolute;
+    width: 200px; /* no height needed ... image will resize automagically */
+  }
+
+  nav .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+ }
+
+ .navbar {
+    height: 70px !important; /*i assume your navbar size 100px*/
+}
+
+.navbar-brand {
+    padding: 0;
+}
+
+.logo {
+    margin: 0;
+}
+
+
+.nav-link{
+    color: black !important;
+}
