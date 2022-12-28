@@ -1,39 +1,406 @@
-*{
-    font-family: SQMarket-Medium,SQMarket,"Helvetica Neue","Helvetica","Arial",sans-serif;
-    font-weight: 500;
+/* ------------------------------------------------------------ 
+Fonts setup
+---------------------------------------------------------------*/
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;1,400&display=swap");
+
+/* ------------------------------------------------------------ 
+Color setup
+---------------------------------------------------------------*/
+:root {
+  --primary: #3155e7;
+  --primary-dark: #2045d6;
+  --black: #010101;
+  --gray-1: #788190;
+  --gray-2: #d3d4db;
+  --white: #ffffff;
+  --body: #fefefe;
 }
 
-nav .btn:focus {
-        outline: none;
-        box-shadow: none;
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  background-color: var(--body);
 }
-
+/* 
 .navbar-brand {
     background: url(http://disputebills.com/site/uploads/2015/10/dispute.png) center / contain no-repeat;
     transform: translateX(-50%);
     left: 50%;
     position: absolute;
     width: 200px; /* no height needed ... image will resize automagically */
+  /*}
+   */
+
+
+/* ------------------------------------------------------------ 
+Setup components
+---------------------------------------------------------------*/
+
+/* button */
+.btn {
+  border-radius: 8px;
+}
+
+.btn-primary,
+.btn-outline-secondary {
+  padding: 12px 20px;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+}
+
+.btn-outline-secondary {
+  border: 1px solid var(--gray-2);
+  color: var(--black);
+}
+
+.btn-outline-secondary:hover {
+  background-color: var(--gray-2);
+  border: 1px solid var(--gray-2);
+  color: var(--black);
+}
+
+.btn-outline-secondary:focus {
+  background-color: var(--gray-2);
+  border: 1px solid var(--gray-2);
+  color: var(--black);
+}
+
+/* ------------------------------------------------------------ 
+Navbar
+---------------------------------------------------------------*/
+
+/* navbar */
+/* * {
+  margin: 0;
+  padding: 0;
+} */
+
+.navbar {
+  width: 100%;
+  height: 75px;
+  margin: 0;
+  padding: 0;
+  z-index: 1;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+
+
+/* animation */
+.animate__animated.animate__fadeInLeft {
+  animation-delay: 0.5s;
+}
+.animate__animated.animate__fadeInRight {
+  animation-delay: 0.5s;
+}
+.animate__animated.animate__fadeInDown {
+  animation-delay: 0.1s;
+}
+/* /animation */
+
+/* menu */
+.navbar menu {
+  width: auto;
+  height: 70px;
+  float: left;
+}
+
+ ul {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  float: left;
+  list-style: none;
+  position: relative;
+}
+
+ul li {
+  float: left;
+  display: inline-block;
+  margin: 0 8px;
+}
+
+ul li a {
+  color: rgb(14, 11, 11);
+  text-decoration: none;
+  line-height: 70px;
+  font-size: 18px;
+  padding: 1px 4px;
+}
+
+ul li a:hover {
+  color: #f11f10;
+  /* border-radius: 5px; */
+  /* border-bottom: 1px solid #f11f10; */
+  /* box-shadow: 0 0 1px #f11f10, 0 0 2px #f11f10; */
+}
+.drop {
+  background-color: white;
+  /* box-shadow: 0 0 1px #adadad, 0 0 2px; */
+  box-shadow: 0px 0px 20px 0px rgb(0 0 0/10%);
+
+}
+ul ul {
+  position: absolute;
+  top: 90px;
+  border-top: 3px solid #f11f10;
+  opacity: 0;
+  visibility: hidden;
+  transition: top 0.3s;
+  border-radius: 4px;
+  z-index: 1;
+}
+
+ul ul ul {
+  border-top: none;
+  
+
+}
+
+ul li:hover > ul {
+  top: 65px;
+  opacity: 1;
+  visibility: visible;
+  border-bottom: none;
+}
+
+ul ul li {
+  position: relative;
+  margin: 0;
+  width: 90px;
+  float: none;
+  display: list-item;
+  /* border-bottom: 1px solid rgba(0, 0, 0, 0.3); */
+  transition: left 0.3s;
+}
+
+ul ul li a {
+  line-height: 35px;
+}
+
+ul ul li a:hover {
+  color: #f11f10;
+  box-shadow: none;
+  /* background-color: yellow; */
+}
+
+ul ul ul li {
+  position: relative;
+  top: -62px;
+  left: 55px;
+  background-color: white;
+  box-shadow: 0px 0px 50px 0px rgb(0 0 0/10%);
+}
+/* /menu */
+
+/* login sigin */
+.login-signup {
+  margin-right: 30px;
+}
+.login {
+  font-size: 18px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.login:hover {
+  color: #f11f10;
+}
+
+.signup {
+  font-size: 15px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background: #f11f10;
+}
+
+.signup:hover {
+  color: #f11f10;
+  background: white;
+  transition: 0.3s;
+  box-shadow: 0 0 1px #f11f10, 0 0 3px #f11f10;
+}
+
+/* /login-signin */
+
+/* /navbar */
+/* ------------------------------------------------------------ 
+Hero setion
+---------------------------------------------------------------*/
+section.hero {
+  padding: 80px 0;
+  z-index: -99;
+}
+
+section.hero .text {
+  font-weight: 800;
+  font-size: 48px;
+  line-height: 73px;
+  color: var(--black);
+}
+
+.buttons {
+  padding-top: 60px;
+}
+
+.btn1 {
+  font-size: 15px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background: #f11f10;
+  color: white;
+  border-radius: 4px;
+}
+
+.btn1:hover {
+  color: #f11f10;
+  background: white;
+  transition: 0.3s;
+  box-shadow: 0 0 1px #f11f10, 0 0 3px #f11f10;
+}
+.btn2 {
+  font-size: 15px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background: white;
+  color: #f11f10;
+  border-radius: 4px;
+}
+
+.btn2:hover {
+  color: white;
+  background: #f11f10;
+  /* transition: 0.3s; */
+  /* box-shadow: 0 0 1px #f11f10, 0 0 3px #f11f10; */
+}
+/* ------------------------------------------------------------ 
+Setup setion
+---------------------------------------------------------------*/
+section.setup {
+  padding: 287px 0;
+}
+
+section.setup .text-header h3 {
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 48px;
+  color: var(--black);
+}
+
+section.setup .text-header p {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  color: var(--gray-1);
+  padding: 27px 0;
+}
+
+section.setup .icons {
+  padding: 27px 0;
+}
+
+section.setup h5 {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  color: var(--black);
+  padding-bottom: 18px;
+}
+
+section.setup .desc p {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 22px;
+  color: var(--gray-1);
+  max-width: 284px;
+  margin: 0 auto;
+}
+
+/* ------------------------------------------------------------ 
+Information setion
+---------------------------------------------------------------*/
+section.information .text-information {
+  padding: 134px 0;
+}
+
+section.information h5 {
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 48px;
+  color: var(--black);
+}
+
+section.information p {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 28px;
+  color: var(--gray-1);
+  padding-top: 20px;
+}
+
+section.information .info-1 {
+  padding: 183px 0;
+}
+
+/* ------------------------------------------------------------ 
+Responsive section
+---------------------------------------------------------------*/
+@media (max-width: 576px) {
+  section.hero,
+  section.setup,
+  section.information {
+    text-align: center;
   }
 
-  nav .dropdown:hover .dropdown-menu {
+  /* ------------------------------------------------------------ 
+    Navbar
+    ---------------------------------------------------------------*/
+  .navbar {
+    padding: 20px 0;
+  }
+
+  .nav-link {
+    margin-left: 0;
+  }
+
+  /* ------------------------------------------------------------ 
+    Hero setion
+    ---------------------------------------------------------------*/
+  section.hero img {
+    padding-top: 2.5rem;
+  }
+
+  section.hero .text {
+    font-weight: 800;
+    font-size: 38px;
+    line-height: 53px;
+  }
+
+  .buttons .btn {
     display: block;
-    margin-top: 0;
- }
+    margin: 1rem 0;
+  }
 
- .navbar {
-    height: 70px !important; /*i assume your navbar size 100px*/
-}
+  .buttons .ms-3 {
+    margin-left: 0 !important;
+  }
 
-.navbar-brand {
-    padding: 0;
-}
+  /* ------------------------------------------------------------ 
+    Setup setion
+    ---------------------------------------------------------------*/
+  section.setup {
+    padding: 50px 0;
+  }
 
-.logo {
-    margin: 0;
-}
-
-
-.nav-link{
-    color: black !important;
+  /* ------------------------------------------------------------ 
+    Footer setion
+    ---------------------------------------------------------------*/
+  footer {
+    padding-top: 50px;
+    margin-bottom: 44px;
+  }
 }
